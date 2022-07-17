@@ -1,6 +1,8 @@
 <?php 
 session_start();
+
 $titulo="Ejercicio web noticias";
+$noticiasPorPagina=3;
 if (isset($_SESSION['username'])){
     $nombre= $_SESSION['username'];}
     else{
@@ -50,6 +52,7 @@ $query=mysqli_query($conect,$sql);
                     <img src="<?= $row["imagen"] ?>"class="sizePhoto logo" >
                    <p class="contenido"><?= $row["texto"] ?></p>
                 </div>
+                <?php echo "Fecha de la noticia:"." ".$row["fecha"] ?>
            </article>
            <?php } ?>
 
